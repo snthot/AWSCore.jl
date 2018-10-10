@@ -25,6 +25,7 @@ function http_request(request::AWSRequest)
             request[:response_stream] = io
             push!(options, (:response_stream, io))
         end
+        push!(options, (:readtimeout, 5))
 
         verbose = debug_level - 1
 
