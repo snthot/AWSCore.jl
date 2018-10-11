@@ -4,7 +4,7 @@ SymDict
 XMLDict
 JSON
 IniFile
-HTTP 0.6.3
+HTTP 0.7.1
 MbedTLS 0.6
 DataStructures
 LazyJSON
