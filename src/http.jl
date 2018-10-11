@@ -45,8 +45,8 @@ function http_request(request::AWSRequest)
                             #aws_session_token = request[:creds].token,
                             verbose = verbose,
                             require_ssl_verification=false,
-                            readtimeout = 3,
-                            retry=false,
+                            readtimeout = 5,
+                            retry=true,
                             redirect = true,
                             redirect_limit = 5,
                             options...)
