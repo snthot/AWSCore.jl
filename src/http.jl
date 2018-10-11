@@ -25,7 +25,6 @@ function http_request(request::AWSRequest)
             request[:response_stream] = io
             push!(options, (:response_stream, io))
         end
-        push!(options, (:readtimeout, 5))
 
         verbose = debug_level - 1
 
@@ -46,6 +45,10 @@ function http_request(request::AWSRequest)
                             #aws_session_token = request[:creds].token,
                             verbose = verbose,
                             require_ssl_verification=false,
+                            readtimeout = 3,
+                            retry=false,
+                            redirect = true,
+                            redirect_limit = 5,
                             options...)
 
     catch e
